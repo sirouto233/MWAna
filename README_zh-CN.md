@@ -131,6 +131,7 @@ _**5.测试数据集**_
 
 _**1.通过Git获取本项目**_
 ```powershell
+git lfs install
 git clone https://github.com/sirouto233/MWAna.git
 cd MWAna
 ```
