@@ -39,19 +39,19 @@
 <p align="center">
   <a href="https://github.com/sirouto233/MWAna/releases/latest">⬇️ 下载发布版</a>
   &nbsp; · &nbsp;
-  <a href="./README.md#-背景">🔬 背景</a>
+  <a href="./README_zh-CN.md#-背景">🔬 背景</a>
   &nbsp; · &nbsp;
-  <a href="./README.md#-快速使用">🚀 快速使用</a>
+  <a href="./README_zh-CN.md#-快速使用">🚀 快速使用</a>
   &nbsp; · &nbsp;
-  <a href="./README.md#-安装与启动">⚙️ 安装与启动</a>
+  <a href="./README_zh-CN.md#-安装与启动">⚙️ 安装与启动</a>
   &nbsp; · &nbsp;
-  <a href="./README.md#-工作流程">📦 工作流程</a>
+  <a href="./README_zh-CN.md#-工作流程">📦 工作流程</a>
   &nbsp; · &nbsp;
-  <a href="./README.md#-使用指南">📱 使用指南</a>
+  <a href="./README_zh-CN.md#-使用指南">📱 使用指南</a>
   &nbsp; · &nbsp;
-  <a href="./README.md#-项目特色">🎆 项目特色</a>
+  <a href="./README_zh-CN.md#-项目特色">🎆 项目特色</a>
   &nbsp; · &nbsp;
-  <a href="./README.md#-开源协议与模型来源">⚖️ 开源协议与模型来源</a>
+  <a href="./README_zh-CN.md#-开源协议与模型来源">⚖️ 开源协议与模型来源</a>
 </p>
 
 <hr style="height:3px;background-color:#66717C;border:none;"> 
@@ -88,7 +88,7 @@ _**2.启动图形界面**_
 
 _**3.选择工作模式，源数据文件夹以及分类模型**_
 
-参考图形界面提示进行对应选择，具体各模式对应数据形式和文件夹结构请参考后文 [使用指南](./README.md#-使用指南) 。
+参考图形界面提示进行对应选择，具体各模式对应数据形式和文件夹结构请参考后文 [使用指南](./README_zh-CN.md#-使用指南) 。
 
 [例] **全流程执行**：勾选上方所有处理步骤，选择明场与荧光图共存的父级文件夹（可命名为`origin`），选择模型`MWAna_3×3_SwinT-V6.pth`，点击运行，即可执行全流程分析，得到结果数据。
 
