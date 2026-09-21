@@ -1,0 +1,2 @@
+# Optional executable packaging dependency.
+pyinstaller==6.18.0
