@@ -78,7 +78,7 @@
 _**1.获取发布版程序**_
 
 前往 [Releases](https://github.com/sirouto233/MWAna/releases/latest)，
-在 **Assets** 中下载最新版 `MWAna.zip`，解压后进入包含`_internal`文件夹，启动程序`launcher.exe`，预测模型`MWAna_3×3_SwinT-V6.pth`，以及预训练权重`swin_tiny_patch4_window7_224.pth`的根目录。
+下载最新版 `MWAna.zip`（注意下载全部压缩分卷），解压后进入包含`_internal`文件夹，启动程序`launcher.exe`，预测模型`MWAna_3×3_SwinT-V6.pth`，以及预训练权重`swin_tiny_patch4_window7_224.pth`的根目录。
 <br/>
 
 _**2.启动图形界面**_
