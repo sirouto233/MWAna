@@ -143,6 +143,7 @@ Tested environment: Windows 11, Python 3.12 (x64), NVIDIA RTX3070, and CUDA 11.8
 _**1. Get the project with Git**_
 
 ```powershell
+git lfs install
 git clone https://github.com/sirouto233/MWAna.git
 cd MWAna
 ```
