@@ -82,7 +82,7 @@ For more background, see [Project Background](./documents/BG.md).
 
 _**1. Download the release package**_
 
-Go to the [latest release](https://github.com/sirouto233/MWAna/releases/latest) and download the latest `MWAna.zip` under **Assets**. Extract the archive and open the root folder containing the `_internal` folder, the launcher `launcher.exe`, the prediction model `MWAna_3×3_SwinT-V6.pth`, and the pretrained weights `swin_tiny_patch4_window7_224.pth`.
+Go to the [latest release](https://github.com/sirouto233/MWAna/releases/latest) and download the latest `MWAna.zip` (all of the multi-part archives are required). Extract the archive and open the root folder containing the `_internal` folder, the launcher `launcher.exe`, the prediction model `MWAna_3×3_SwinT-V6.pth`, and the pretrained weights `swin_tiny_patch4_window7_224.pth`.
 
 <br/>
 
