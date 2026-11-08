@@ -14,7 +14,7 @@ import timm
 
 
 class ComponentDataset(Dataset):
-    """Load labeled 3x3 patches with radial weighting and ImageNet normalization."""
+    """Load labeled 3x3 patches with ImageNet normalization."""
 
     def __init__(self, dataframe):
         self.dataframe = dataframe
@@ -27,12 +27,6 @@ class ComponentDataset(Dataset):
         )
 
 
-        # Fixed radial weighting; this is not a learned attention layer.
-        x = np.linspace(-1, 1, 224)
-        y = np.linspace(-1, 1, 224)
-        xx, yy = np.meshgrid(x, y)
-        r = np.sqrt(xx ** 2 + yy ** 2)
-        self.vignette = np.clip(np.exp(-(r ** 2) / (2 * 1.2 ** 2)), 0.6, 1.0).astype(np.float32)
 
 
         for idx in range(len(dataframe)):
@@ -59,7 +53,6 @@ class ComponentDataset(Dataset):
         img = cv2.resize(img, (224, 224))
 
 
-        img = (img.astype(np.float32) * self.vignette).astype(np.uint8)
 
 
         img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
