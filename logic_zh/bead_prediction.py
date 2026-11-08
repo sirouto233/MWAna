@@ -55,7 +55,7 @@ def adjust_contrast(image, saturation_percent=0.5):
 
 
 class StitchingProcessor:
-    """构建 3x3 邻域图，并施加固定径向亮度权重。"""
+    """构建 3x3 邻域图。"""
 
     def __init__(self, masked_image, components, kd_tree):
         self.masked_image = masked_image
@@ -66,12 +66,6 @@ class StitchingProcessor:
         self.std = torch.tensor([0.229, 0.224, 0.225]).view(3, 1, 1)
 
 
-        # 固定径向权重，不属于可学习注意力层。
-        x = np.linspace(-1, 1, 224)
-        y = np.linspace(-1, 1, 224)
-        xx, yy = np.meshgrid(x, y)
-        r = np.sqrt(xx ** 2 + yy ** 2)
-        self.vignette = np.clip(np.exp(-(r ** 2) / (2 * 1.2 ** 2)), 0.6, 1.0).astype(np.float32)
 
     def get_3x3_grid(self, center_idx):
         center_comp = self.components[center_idx]
@@ -133,14 +127,13 @@ class StitchingProcessor:
         patches = np.empty((len(indices), 224, 224), dtype=np.uint8)
         for row, idx in enumerate(indices):
             patch = self.get_3x3_grid(idx)
-            patches[row] = (patch.astype(np.float32) * self.vignette).astype(np.uint8)
+            patches[row] = patch
         return torch.from_numpy(patches) if len(indices) else None
 
     def process_batch(self, indices):
         tensors = []
         for idx in indices:
             img_numpy = self.get_3x3_grid(idx)
-            img_numpy = (img_numpy.astype(np.float32) * self.vignette).astype(np.uint8)
             tensors.append(img_numpy)
 
         if not tensors:

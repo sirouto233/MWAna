@@ -14,7 +14,7 @@ import timm
 
 
 class ComponentDataset(Dataset):
-    """加载已标注的 3x3 图块，施加径向权重并进行 ImageNet 归一化。"""
+    """加载已标注的 3x3 图块，进行 ImageNet 归一化。"""
 
     def __init__(self, dataframe):
         self.dataframe = dataframe
@@ -28,12 +28,6 @@ class ComponentDataset(Dataset):
         )
 
 
-        # 固定径向权重，不属于可学习注意力层。
-        x = np.linspace(-1, 1, 224)
-        y = np.linspace(-1, 1, 224)
-        xx, yy = np.meshgrid(x, y)
-        r = np.sqrt(xx ** 2 + yy ** 2)
-        self.vignette = np.clip(np.exp(-(r ** 2) / (2 * 1.2 ** 2)), 0.6, 1.0).astype(np.float32)
 
 
         for idx in range(len(dataframe)):
@@ -62,7 +56,6 @@ class ComponentDataset(Dataset):
         img = cv2.resize(img, (224, 224))
 
 
-        img = (img.astype(np.float32) * self.vignette).astype(np.uint8)
 
 
         img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
